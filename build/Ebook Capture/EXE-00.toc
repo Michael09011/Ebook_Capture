@@ -1,8 +1,9 @@
-('/Users/michael/Workspace/Ebook_Capture/build/Ebook Capture/Ebook Capture',
+('/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook Capture/Ebook '
+ 'Capture',
  False,
  False,
  True,
- ['/Users/michael/Workspace/Ebook_Capture/ebook_capture.icns'],
+ ['/Users/michael/Documents/GitHub/Ebook_Capture/ebook_capture.icns'],
  None,
  False,
  False,
@@ -12,10 +13,12 @@
  'x86_64',
  None,
  None,
- '/Users/michael/Workspace/Ebook_Capture/build/Ebook Capture/Ebook Capture.pkg',
+ '/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook Capture/Ebook '
+ 'Capture.pkg',
  [('pyi-contents-directory _internal', '', 'OPTION'),
   ('PYZ-00.pyz',
-   '/Users/michael/Workspace/Ebook_Capture/build/Ebook Capture/PYZ-00.pyz',
+   '/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook '
+   'Capture/PYZ-00.pyz',
    'PYZ'),
   ('python3.14/lib-dynload/_struct.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/_struct.cpython-314-darwin.so',
@@ -24,19 +27,19 @@
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/zlib.cpython-314-darwin.so',
    'EXTENSION'),
   ('struct',
-   '/Users/michael/Workspace/Ebook_Capture/build/Ebook '
+   '/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook '
    'Capture/localpycs/struct.pyc',
    'PYMODULE'),
   ('pyimod01_archive',
-   '/Users/michael/Workspace/Ebook_Capture/build/Ebook '
+   '/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook '
    'Capture/localpycs/pyimod01_archive.pyc',
    'PYMODULE'),
   ('pyimod02_importers',
-   '/Users/michael/Workspace/Ebook_Capture/build/Ebook '
+   '/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook '
    'Capture/localpycs/pyimod02_importers.pyc',
    'PYMODULE'),
   ('pyimod03_ctypes',
-   '/Users/michael/Workspace/Ebook_Capture/build/Ebook '
+   '/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook '
    'Capture/localpycs/pyimod03_ctypes.pyc',
    'PYMODULE'),
   ('pyiboot01_bootstrap',
@@ -49,12 +52,12 @@
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/PyInstaller/hooks/rthooks/pyi_rth__tkinter.py',
    'PYSOURCE'),
   ('ebook_capture',
-   '/Users/michael/Workspace/Ebook_Capture/ebook_capture.py',
+   '/Users/michael/Documents/GitHub/Ebook_Capture/ebook_capture.py',
    'PYSOURCE')],
  [],
  False,
  False,
- 1780878022,
+ 1780879341,
  [('runw',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/PyInstaller/bootloader/Darwin-64bit/runw',
    'EXECUTABLE')],

@@ -89,6 +89,7 @@ class EbookCaptureApp:
         row("캡처 Y", "67", "cap_y")
         row("캡처 폭", "672", "cap_w")
         row("캡처 높이", "933", "cap_h")
+        ttk.Button(settings_card, text="좌표 선택", style="Secondary.TButton", command=self.select_capture_region).pack(anchor="e", pady=(4, 6))
         row("딜레이(초)", "1.0", "delay_sec")
 
         separator = ttk.Separator(self.root, orient="horizontal")
@@ -126,6 +127,67 @@ class EbookCaptureApp:
         )
         if folder:
             self.save_folder.set(folder)
+
+    def select_capture_region(self):
+        self.log("마우스로 캡처 영역을 선택하세요.")
+        overlay = tk.Toplevel(self.root)
+        overlay.attributes("-fullscreen", True)
+        overlay.attributes("-alpha", 0.22)
+        overlay.attributes("-topmost", True)
+        overlay.configure(bg="black")
+        overlay.grab_set()
+
+        canvas = tk.Canvas(overlay, cursor="cross", bg="black", highlightthickness=0)
+        canvas.pack(fill="both", expand=True)
+
+        selection = {"start_x": 0, "start_y": 0, "rect": None}
+
+        def on_press(event):
+            selection["start_x"] = event.x_root
+            selection["start_y"] = event.y_root
+            selection["rect"] = canvas.create_rectangle(
+                selection["start_x"], selection["start_y"],
+                selection["start_x"], selection["start_y"],
+                outline="#f25f5c", width=2
+            )
+
+        def on_drag(event):
+            if selection["rect"] is None:
+                return
+            canvas.coords(selection["rect"],
+                          selection["start_x"], selection["start_y"],
+                          event.x_root, event.y_root)
+
+        def on_release(event):
+            if selection["rect"] is None:
+                return
+            x0 = min(selection["start_x"], event.x_root)
+            y0 = min(selection["start_y"], event.y_root)
+            x1 = max(selection["start_x"], event.x_root)
+            y1 = max(selection["start_y"], event.y_root)
+            w = x1 - x0
+            h = y1 - y0
+            overlay.grab_release()
+            overlay.destroy()
+            if w > 0 and h > 0:
+                self.cap_x.set(str(int(x0)))
+                self.cap_y.set(str(int(y0)))
+                self.cap_w.set(str(int(w)))
+                self.cap_h.set(str(int(h)))
+                self.log(f"선택 완료: {x0},{y0},{w},{h}")
+            else:
+                self.log("캡처 영역 선택이 취소되었습니다.")
+
+        def cancel_selection(event=None):
+            overlay.grab_release()
+            overlay.destroy()
+            self.log("캡처 영역 선택 취소")
+
+        canvas.bind("<ButtonPress-1>", on_press)
+        canvas.bind("<B1-Motion>", on_drag)
+        canvas.bind("<ButtonRelease-1>", on_release)
+        overlay.bind("<Escape>", cancel_selection)
+        overlay.focus_set()
 
     def log(self, msg):
         timestamp = datetime.now().strftime("%H:%M:%S")

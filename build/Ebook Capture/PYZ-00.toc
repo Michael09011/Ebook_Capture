@@ -1,4 +1,4 @@
-('/Users/michael/Workspace/Ebook_Capture/build/Ebook Capture/PYZ-00.pyz',
+('/Users/michael/Documents/GitHub/Ebook_Capture/build/Ebook Capture/PYZ-00.pyz',
  [('__future__',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/__future__.py',
    'PYMODULE'),
